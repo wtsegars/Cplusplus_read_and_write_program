@@ -1,14 +1,19 @@
 #include <cstdio>
+#include <ostream>
+#include <fstream>
 
 struct ReadFrom {
     ReadFrom () {
 
     }
+private:
+    char lower_case[];
+    char upper_case[];
 };
 
 struct WriteTo {
     WriteTo() {
-        
+
     }
 };
 
