@@ -1,34 +1,36 @@
 #include <cstdio>
 #include <ostream>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 struct WriteTo {
     WriteTo (char x[]) {
+        ofstream File("text.txt");
         for (int i = 0; i < strlen(x); i++) {
             if (isupper(x[i])) {
                 x[i] = x[i] - 32;
-                ofstream File("text.txt");
                 File << x[i];
-                File.close();
             }
             else if (islower(x[i])) {
                 x[i] = x[i] + 32;
-                ofstream File("text.txt");
                 File << x[i];
-                File.close();
             }
         }
+        File.close();
     }
-private:
-    char lower_case[];
-    char upper_case[];
 };
 
 struct ReadFrom {
-    ReadFrom() {
-
+    ReadFrom(char x[]) {
+        ifstream File("text.txt");
+        while (getline (File, text_string)) {
+            cout << text_string;
+        }
+        File.close();
     }
+private:
+    string text_string;
 };
 
 int main() {
