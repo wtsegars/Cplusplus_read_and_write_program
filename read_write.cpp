@@ -22,7 +22,7 @@ struct WriteTo {
 };
 
 struct ReadFrom {
-    ReadFrom(char x[]) {
+    ReadFrom() {
         ifstream File("text.txt");
         while (getline (File, text_string)) {
             cout << text_string;
@@ -46,5 +46,6 @@ int main() {
 
     printf("lower: %s\nupper: %s", lower, upper);
 
-    lower[7] = 'g'; // super bad, you must never do this
+    WriteTo writeto(lower);
+    ReadFrom readfrom();
 }
