@@ -34,8 +34,8 @@ private:
 };
 
 int main() {
-    char lower[] = "abc?e";
-    char upper[] = "ABC?E";
+    char lower[] = "abcde";
+    char upper[] = "ABCDE";
     
     WriteTo writeto(lower);
     ReadFrom readfrom;
