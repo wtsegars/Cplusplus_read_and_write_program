@@ -2,6 +2,7 @@
 #include <ostream>
 #include <fstream>
 #include <iostream>
+#include <cctype>
 using namespace std;
 
 struct WriteTo {
@@ -9,12 +10,10 @@ struct WriteTo {
         ofstream File("text.txt");
         for (int i = 0; i < strlen(x); i++) {
             if (isupper(x[i])) {
-                x[i] = x[i] - 32;
-                File << x[i];
+                File << putchar(tolower(x[i]));
             }
             else if (islower(x[i])) {
-                x[i] = x[i] + 32;
-                File << x[i];
+                File << putchar(toupper(x[i]));
             }
         }
         File.close();
